@@ -1,3 +1,5 @@
+import * as process from 'node:process';
+
 export default (): any => ({
   env: process.env.APP_ENV,
   port: process.env.APP_PORT,
@@ -8,4 +10,7 @@ export default (): any => ({
     user: process.env.DB_USER,
     pass: process.env.DB_PASS,
   },
+  redis: {
+    url: process.env.REDIS_URL
+  }
 });

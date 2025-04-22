@@ -7,6 +7,8 @@ import { configModuleOptions } from './configs/module-options';
 import { AllExceptionsFilter } from './filters/all-exceptions.filter';
 import { LoggingInterceptor } from './interceptors/logging.interceptor';
 import { AppLoggerModule } from './logger/logger.module';
+import { RedisCacheModule } from './cache/redis';
+import { MemoryCacheModule } from './cache/memory';
 
 @Module({
   imports: [
@@ -30,6 +32,8 @@ import { AppLoggerModule } from './logger/logger.module';
       }),
     }),
     AppLoggerModule,
+    RedisCacheModule,
+    MemoryCacheModule
   ],
   exports: [AppLoggerModule, ConfigModule],
   providers: [
