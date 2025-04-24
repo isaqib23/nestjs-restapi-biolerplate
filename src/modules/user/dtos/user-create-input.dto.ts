@@ -12,7 +12,6 @@ import {
   Length,
   MaxLength,
 } from 'class-validator';
-import { ROLE } from '../../../shared/constants/role.constant';
 
 
 export class CreateUserInput {
@@ -33,12 +32,6 @@ export class CreateUserInput {
   @IsString()
   @Length(6, 100)
   password: string;
-
-  @ApiProperty()
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsEnum(ROLE, { each: true })
-  roles: ROLE[];
 
   @ApiProperty()
   @IsNotEmpty()
